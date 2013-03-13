@@ -1,0 +1,64 @@
+<html>
+<head>
+  <title>Cucumber Reporting Diagnostic</title>
+  <link href="/js/style.css" rel="stylesheet" media="screen">
+  <link href="/js/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+</head>
+<body>
+
+<div class="container">
+
+  <div class="row">
+    <div class="span12">
+      <div class="page-header">
+        <h1>Cucumber-Reporting
+          <small>Report diagnostic</small>
+        </h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span12">
+      <form name="generate" id="generate" action="/generate" method="POST">
+        <fieldset>
+          <legend>Report Generator</legend>
+          <select id="diagnostic_release" name="diagnostic[release]">
+            <% @releases.each do |option| %>
+                <option value="<%= option %>"><%= option %></option>
+            <% end %>
+          </select>
+          <label><i>Disable Flash Charts:</i>
+            <input type="checkbox" name="diagnostic[flash]" id="diagnostic_flash" value="flash">
+          </label>
+          <label><i>Skipped steps fail build:</i>
+            <input type="checkbox" name="diagnostic[skipped]" id="diagnostic_skipped" value="skipped">
+          </label>
+          <label><i>Undefined steps fail build:</i>
+            <input type="checkbox" name="diagnostic[undefined]" id="diagnostic_undefined" value="undefined">
+          </label>
+          <label><i>Json report content:</i></label>
+          <label>
+            <textarea id="diagnostic_json" name="diagnostic[json]" class="required" style="height:400px;width:500px;"></textarea>
+          </label>
+          <input class="btn btn-primary" type="submit" value="Generate Report">
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+
+</div>
+
+<script src="/js/jquery-1.9.1.min.js"></script>
+<script src="/js/bootstrap/js/bootstrap.min.js"></script>
+<script src="/js/jquery-validation/jquery.validate.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#generate").validate();
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,2398 @@
+[{{
+    {
+        "comments": [
+            {
+                "value": "# encoding: utf-8",
+                "line": 1
+            }
+        ],
+        "keyword": "Feature",
+        "name": "files",
+        "line": 2,
+        "description": "In order to organize my files\nAs a user\nI want to have basic file management",
+        "id": "files",
+        "uri": "features/files.feature",
+        "elements": [
+            {
+                "keyword": "Background",
+                "name": "",
+                "line": 7,
+                "description": "",
+                "type": "background",
+                "steps": [
+                    {
+                        "keyword": "Given ",
+                        "name": "I am logged in",
+                        "line": 8,
+                        "match": {
+                            "location": "features/step_definitions/basic_steps.rb:1"
+                        },
+                        "result": {
+                            "status": "passed"
+                        }
+                    },
+                    {
+                        "comments": [
+                            {
+                                "value": "# these are the files hosted on demo.owncloud.org",
+                                "line": 9
+                            }
+                        ],
+                        "keyword": "And ",
+                        "name": "I am in the \"files\" app",
+                        "line": 10,
+                        "match": {
+                            "arguments": [
+                                {
+                                    "offset": 13,
+                                    "val": "files"
+                                }
+                            ],
+                            "location": "features/step_definitions/basic_steps.rb:16"
+                        },
+                        "result": {
+                            "status": "passed"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I have uploaded the \"demo\" files",
+                        "line": 11,
+                        "match": {
+                            "arguments": [
+                                {
+                                    "offset": 21,
+                                    "val": "demo"
+                                }
+                            ],
+                            "location": "features/step_definitions/files_steps.rb:2"
+                        },
+                        "result": {
+                            "status": "passed"
+                        }
+                    }
+                ]
+            },
+            {
+                "comments": [
+                    {
+                        "value": "# TODO upload directories",
+                        "line": 12
+                    }
+                ],
+                "keyword": "Scenario Outline",
+                "name": "list files",
+                "line": 14,
+                "description": "",
+                "id": "files;list-files",
+                "type": "scenario_outline",
+                "steps": [
+                    {
+                        "comments": [
+                            {
+                                "value": "#    When I go to \"/\"",
+                                "line": 15
+                            }
+                        ],
+                        "keyword": "Then ",
+                        "name": "<name> should be of type <mime>",
+                        "line": 16,
+                        "match": {
+                            "arguments": [
+                                {
+                                    "offset": 0,
+                                    "val": "Demo Code - C++.cc"
+                                },
+                                {
+                                    "offset": 37,
+                                    "val": "text/x-c"
+                                }
+                            ],
+                            "location": "features/step_definitions/files_steps.rb:13"
+                        }
+                    },
+                    {
+                        "keyword": "Then ",
+                        "name": "<name> should have <bytes> bytes size",
+                        "line": 17,
+                        "match": {
+                            "arguments": [
+                                {
+                                    "offset": 0,
+                                    "val": "Demo Code - C++.cc"
+                                },
+                                {
+                                    "offset": 31,
+                                    "val": "3066"
+                                }
+                            ],
+                            "location": "features/step_definitions/files_steps.rb:17"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "<name> should show a <human> size",
+                        "line": 18,
+                        "match": {
+                            "arguments": [
+                                {
+                                    "offset": 0,
+                                    "val": "Demo Code - C++.cc"
+                                },
+                                {
+                                    "offset": 33,
+                                    "val": "3 kB"
+                                }
+                            ],
+                            "location": "features/step_definitions/files_steps.rb:21"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I should see a new button",
+                        "line": 19,
+                        "match": {
+                            "location": "features/step_definitions/files_steps.rb:25"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I should see an upload action",
+                        "line": 20,
+                        "match": {
+                            "location": "features/step_definitions/files_steps.rb:29"
+                        }
+                    }
+                ],
+                "examples": [
+                    {
+                        "keyword": "Examples",
+                        "name": "",
+                        "line": 22,
+                        "description": "",
+                        "id": "files;list-files;",
+                        "rows": [
+                            {
+                                "cells": ["mime", "name", "bytes", "human"],
+                                "line": 23,
+                                "id": "files;list-files;;1"
+                            },
+                            {
+                                "cells": ["text/x-c", "Demo Code - C++.cc", "3066", "3 kB"],
+                                "line": 24,
+                                "id": "files;list-files;;2"
+                            },
+                            {
+                                "cells": ["text/x-php", "Demo Code - PHP.php", "3705", "3.6 kB"],
+                                "line": 25,
+                                "id": "files;list-files;;3"
+                            },
+                            {
+                                "cells": ["text/x-script.phyton", "Demo Code - Python.py", "875", "875 B"],
+                                "line": 26,
+                                "id": "files;list-files;;4"
+                            },
+                            {
+                                "cells": ["image/jpeg", "Demo Image - ccc.jpg", "166367", "162.5 kB"],
+                                "line": 27,
+                                "id": "files;list-files;;5"
+                            },
+                            {
+                                "cells": ["image/jpeg", "Demo Image - Laser Towards Milky Ways Centre.jpg", "315057", "307.7 kB"],
+                                "line": 28,
+                                "id": "files;list-files;;6"
+                            },
+                            {
+                                "cells": ["image/jpeg", "Demo Image - Northern Lights.jpg", "224246", "219 kB"],
+                                "line": 29,
+                                "id": "files;list-files;;7"
+                            },
+                            {
+                                "cells": ["video/quicktime", "Demo Movie MOV - Big Bug Bunny Trailer.mov", "11061011", "10.5 MB"],
+                                "line": 30,
+                                "id": "files;list-files;;8"
+                            },
+                            {
+                                "cells": ["application/ogg", "Demo Movie OGG - Big Bug Bunny Trailer.ogg", "4360399", "4.2 MB"],
+                                "line": 31,
+                                "id": "files;list-files;;9"
+                            },
+                            {
+                                "cells": ["audio/mpeg", "Demo MP3 - E.J. - Blick ZurÃ¼ck.mp3", "2998100", "2.9 MB"],
+                                "line": 32,
+                                "id": "files;list-files;;10"
+                            },
+                            {
+                                "cells": ["application/pdf", "Demo PDF - Alice in Wonderland.pdf", "711671", "695 kB"],
+                                "line": 33,
+                                "id": "files;list-files;;11"
+                            },
+                            {
+                                "cells": ["text/plain", "Demo Textfile - License.txt", "2016", "2 kB"],
+                                "line": 34,
+                                "id": "files;list-files;;12"
+                            },
+                            {
+                                "cells": ["httpd/unix-directory", "Music", "73705595", "70.3 MB"],
+                                "line": 35,
+                                "id": "files;list-files;;13"
+                            },
+                            {
+                                "cells": ["httpd/unix-directory", "Photos", "784677", "766.3 kB"],
+                                "line": 36,
+                                "id": "files;list-files;;14"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "keyword": "Scenario Outline",
+                "name": "show file actions on hover",
+                "line": 38,
+                "description": "",
+                "id": "files;show-file-actions-on-hover",
+                "type": "scenario_outline",
+                "steps": [
+                    {
+                        "comments": [
+                            {
+                                "value": "#    And I go to /",
+                                "line": 39
+                            }
+                        ],
+                        "keyword": "When ",
+                        "name": "I hover over <entry>",
+                        "line": 40,
+                        "match": {
+                            "arguments": [
+                                {
+                                    "offset": 13,
+                                    "val": "Demo Code - C++.cc"
+                                }
+                            ],
+                            "location": "features/step_definitions/files_steps.rb:33"
+                        }
+                    },
+                    {
+                        "keyword": "Then ",
+                        "name": "I should see a \"Umbenennen\" action for <entry>",
+                        "line": 41,
+                        "match": {
+                            "arguments": [
+                                {
+                                    "offset": 16,
+                                    "val": "Umbenennen"
+                                },
+                                {
+                                    "offset": 39,
+                                    "val": "Demo Code - C++.cc"
+                                }
+                            ],
+                            "location": "features/step_definitions/files_steps.rb:39"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I should see a \"Herunterladen\" action for <entry>",
+                        "line": 42,
+                        "match": {
+                            "arguments": [
+                                {
+                                    "offset": 16,
+                                    "val": "Herunterladen"
+                                },
+                                {
+                                    "offset": 42,
+                                    "val": "Demo Code - C++.cc"
+                                }
+                            ],
+                            "location": "features/step_definitions/files_steps.rb:39"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I should see a delete action for <entry>",
+                        "line": 43,
+                        "match": {
+                            "arguments": [
+                                {
+                                    "offset": 33,
+                                    "val": "Demo Code - C++.cc"
+                                }
+                            ],
+                            "location": "features/step_definitions/files_steps.rb:43"
+                        }
+                    }
+                ],
+                "examples": [
+                    {
+                        "keyword": "Examples",
+                        "name": "",
+                        "line": 45,
+                        "description": "",
+                        "id": "files;show-file-actions-on-hover;",
+                        "rows": [
+                            {
+                                "cells": ["entry"],
+                                "line": 46,
+                                "id": "files;show-file-actions-on-hover;;1"
+                            },
+                            {
+                                "comments": [
+                                    {
+                                        "value": "#      | Music                                            |",
+                                        "line": 47
+                                    },
+                                    {
+                                        "value": "#      | Photos                                           |",
+                                        "line": 48
+                                    }
+                                ],
+                                "cells": ["Demo Code - C++.cc"],
+                                "line": 49,
+                                "id": "files;show-file-actions-on-hover;;2"
+                            },
+                            {
+                                "cells": ["Demo Code - PHP.php"],
+                                "line": 50,
+                                "id": "files;show-file-actions-on-hover;;3"
+                            },
+                            {
+                                "cells": ["Demo Code - Python.py"],
+                                "line": 51,
+                                "id": "files;show-file-actions-on-hover;;4"
+                            },
+                            {
+                                "cells": ["Demo Image - ccc.jpg"],
+                                "line": 52,
+                                "id": "files;show-file-actions-on-hover;;5"
+                            },
+                            {
+                                "cells": ["Demo Image - Laser Towards Milky Ways Centre.jpg"],
+                                "line": 53,
+                                "id": "files;show-file-actions-on-hover;;6"
+                            },
+                            {
+                                "cells": ["Demo Image - Northern Lights.jpg"],
+                                "line": 54,
+                                "id": "files;show-file-actions-on-hover;;7"
+                            },
+                            {
+                                "cells": ["Demo Movie MOV - Big Bug Bunny Trailer.mov"],
+                                "line": 55,
+                                "id": "files;show-file-actions-on-hover;;8"
+                            },
+                            {
+                                "cells": ["Demo Movie OGG - Big Bug Bunny Trailer.ogg"],
+                                "line": 56,
+                                "id": "files;show-file-actions-on-hover;;9"
+                            },
+                            {
+                                "cells": ["Demo MP3 - E.J. - Blick ZurÃ¼ck.mp3"],
+                                "line": 57,
+                                "id": "files;show-file-actions-on-hover;;10"
+                            },
+                            {
+                                "cells": ["Demo PDF - Alice in Wonderland.pdf"],
+                                "line": 58,
+                                "id": "files;show-file-actions-on-hover;;11"
+                            },
+                            {
+                                "cells": ["Demo Textfile - License.txt"],
+                                "line": 59,
+                                "id": "files;show-file-actions-on-hover;;12"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "keyword": "Scenario Outline",
+                "name": "create files and folders",
+                "line": 61,
+                "description": "",
+                "id": "files;create-files-and-folders",
+                "type": "scenario_outline",
+                "steps": [
+                    {
+                        "keyword": "When ",
+                        "name": "I click on the new button",
+                        "line": 62,
+                        "match": {
+                            "location": "features/files.feature:62"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I click on the new <type> action",
+                        "line": 63,
+                        "match": {
+                            "location": "features/files.feature:63"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I enter <filename>",
+                        "line": 64,
+                        "match": {
+                            "location": "features/files.feature:64"
+                        }
+                    },
+                    {
+                        "keyword": "Then ",
+                        "name": "I should see <filename>",
+                        "line": 65,
+                        "match": {
+                            "location": "features/files.feature:65"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "<filename> should have mimetype <mimetype>",
+                        "line": 66,
+                        "match": {
+                            "location": "features/files.feature:66"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "<filename> should have size <size>",
+                        "line": 67,
+                        "match": {
+                            "location": "features/files.feature:67"
+                        }
+                    }
+                ],
+                "examples": [
+                    {
+                        "keyword": "Examples",
+                        "name": "",
+                        "line": 69,
+                        "description": "",
+                        "id": "files;create-files-and-folders;",
+                        "rows": [
+                            {
+                                "cells": ["type", "mimetype", "filename", "size"],
+                                "line": 70,
+                                "id": "files;create-files-and-folders;;1"
+                            },
+                            {
+                                "cells": ["file", "text/plain", "simplefile.txt", "0"],
+                                "line": 71,
+                                "id": "files;create-files-and-folders;;2"
+                            },
+                            {
+                                "cells": ["file", "text/plain", "Ã¤Ã¶Ã¼ ÃŸ Ã„Ã–Ãœ â‚¬ @.txt", "0"],
+                                "line": 72,
+                                "id": "files;create-files-and-folders;;3"
+                            },
+                            {
+                                "cells": ["file", "text/x-c", "test.cc", "0"],
+                                "line": 73,
+                                "id": "files;create-files-and-folders;;4"
+                            },
+                            {
+                                "cells": ["file", "text/x-php", "test.php", "0"],
+                                "line": 74,
+                                "id": "files;create-files-and-folders;;5"
+                            },
+                            {
+                                "cells": ["folder", "httpd/unix-directory", "Testfolder", "0"],
+                                "line": 75,
+                                "id": "files;create-files-and-folders;;6"
+                            },
+                            {
+                                "cells": ["folder", "httpd/unix-directory", "Testfolder with spaces", "0"],
+                                "line": 76,
+                                "id": "files;create-files-and-folders;;7"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "keyword": "Scenario Outline",
+                "name": "create file and reload",
+                "line": 78,
+                "description": "",
+                "id": "files;create-file-and-reload",
+                "type": "scenario_outline",
+                "steps": [
+                    {
+                        "keyword": "When ",
+                        "name": "I click on the new button",
+                        "line": 79,
+                        "match": {
+                            "location": "features/files.feature:79"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I click on the new <type> action",
+                        "line": 80,
+                        "match": {
+                            "location": "features/files.feature:80"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I enter <filename>",
+                        "line": 81,
+                        "match": {
+                            "location": "features/files.feature:81"
+                        }
+                    },
+                    {
+                        "comments": [
+                            {
+                                "value": "# file names are only fetched after reloading the page, so go to /",
+                                "line": 82
+                            }
+                        ],
+                        "keyword": "And ",
+                        "name": "I go to /",
+                        "line": 83,
+                        "match": {
+                            "location": "features/files.feature:83"
+                        }
+                    },
+                    {
+                        "keyword": "Then ",
+                        "name": "I should see <filename>",
+                        "line": 84,
+                        "match": {
+                            "location": "features/files.feature:84"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "<filename> should have a <mimetype> icon",
+                        "line": 85,
+                        "match": {
+                            "location": "features/files.feature:85"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "<filename> should have size <size>",
+                        "line": 86,
+                        "match": {
+                            "location": "features/files.feature:86"
+                        }
+                    }
+                ],
+                "examples": [
+                    {
+                        "keyword": "Examples",
+                        "name": "",
+                        "line": 88,
+                        "description": "",
+                        "id": "files;create-file-and-reload;",
+                        "rows": [
+                            {
+                                "cells": ["type", "mimetype", "filename", "size"],
+                                "line": 89,
+                                "id": "files;create-file-and-reload;;1"
+                            },
+                            {
+                                "cells": ["file", "text/plain", "simplefile.txt", "0"],
+                                "line": 90,
+                                "id": "files;create-file-and-reload;;2"
+                            },
+                            {
+                                "cells": ["file", "text/plain", "Ã¤Ã¶Ã¼ ÃŸ Ã„Ã–Ãœ â‚¬ @.txt", "0"],
+                                "line": 91,
+                                "id": "files;create-file-and-reload;;3"
+                            },
+                            {
+                                "cells": ["file", "text/x-c", "test.cc", "0"],
+                                "line": 92,
+                                "id": "files;create-file-and-reload;;4"
+                            },
+                            {
+                                "cells": ["file", "text/x-php", "test.php", "0"],
+                                "line": 93,
+                                "id": "files;create-file-and-reload;;5"
+                            },
+                            {
+                                "cells": ["folder", "httpd/unix-directory", "Testfolder", "0"],
+                                "line": 94,
+                                "id": "files;create-file-and-reload;;6"
+                            },
+                            {
+                                "cells": ["folder", "httpd/unix-directory", "Testfolder with spaces", "0"],
+                                "line": 95,
+                                "id": "files;create-file-and-reload;;7"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "keyword": "Scenario",
+                "name": "create from URL",
+                "line": 97,
+                "description": "",
+                "id": "files;create-from-url",
+                "type": "scenario",
+                "steps": [
+                    {
+                        "keyword": "Given ",
+                        "name": "I am logged in",
+                        "line": 8,
+                        "match": {
+                            "location": "features/step_definitions/basic_steps.rb:1"
+                        },
+                        "result": {
+                            "status": "passed"
+                        }
+                    },
+                    {
+                        "comments": [
+                            {
+                                "value": "# these are the files hosted on demo.owncloud.org",
+                                "line": 9
+                            }
+                        ],
+                        "keyword": "And ",
+                        "name": "I am in the \"files\" app",
+                        "line": 10,
+                        "match": {
+                            "arguments": [
+                                {
+                                    "offset": 13,
+                                    "val": "files"
+                                }
+                            ],
+                            "location": "features/step_definitions/basic_steps.rb:16"
+                        },
+                        "result": {
+                            "status": "passed"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I have uploaded the \"demo\" files",
+                        "line": 11,
+                        "match": {
+                            "arguments": [
+                                {
+                                    "offset": 21,
+                                    "val": "demo"
+                                }
+                            ],
+                            "location": "features/step_definitions/files_steps.rb:2"
+                        },
+                        "result": {
+                            "status": "passed"
+                        }
+                    },
+                    {
+                        "keyword": "When ",
+                        "name": "I click on the new button",
+                        "line": 98,
+                        "match": {
+                            "location": "features/files.feature:98"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I click on the from URL action",
+                        "line": 99,
+                        "match": {
+                            "location": "features/files.feature:99"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "comments": [
+                            {
+                                "value": "#TODO which url? an rfc doc? or a demo file alredy shared from demo? or from the local installation",
+                                "line": 100
+                            }
+                        ],
+                        "keyword": "And ",
+                        "name": "I enter a URL",
+                        "line": 101,
+                        "match": {
+                            "location": "features/files.feature:101"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "Then ",
+                        "name": "I should see the downloaded file with the basename of the URL as the name",
+                        "line": 102,
+                        "match": {
+                            "location": "features/files.feature:102"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I should see an icon for the new file",
+                        "line": 103,
+                        "match": {
+                            "location": "features/files.feature:103"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I should see the size of the new file",
+                        "line": 104,
+                        "match": {
+                            "location": "features/files.feature:104"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    }
+                ]
+            },
+            {
+                "keyword": "Scenario Outline",
+                "name": "download file",
+                "line": 106,
+                "description": "",
+                "id": "files;download-file",
+                "type": "scenario_outline",
+                "steps": [
+                    {
+                        "keyword": "And ",
+                        "name": "I go to /",
+                        "line": 107,
+                        "match": {
+                            "location": "features/files.feature:107"
+                        }
+                    },
+                    {
+                        "keyword": "When ",
+                        "name": "I hover over <type> <filename>",
+                        "line": 108,
+                        "match": {
+                            "arguments": [
+                                {
+                                    "offset": 13,
+                                    "val": "file Demo Code - C++.cc"
+                                }
+                            ],
+                            "location": "features/step_definitions/files_steps.rb:33"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I click on the download action of <filename>",
+                        "line": 109,
+                        "match": {
+                            "location": "features/files.feature:109"
+                        }
+                    },
+                    {
+                        "keyword": "Then ",
+                        "name": "I should download <file>",
+                        "line": 110,
+                        "match": {
+                            "location": "features/files.feature:110"
+                        }
+                    }
+                ],
+                "examples": [
+                    {
+                        "keyword": "Examples",
+                        "name": "",
+                        "line": 112,
+                        "description": "",
+                        "id": "files;download-file;",
+                        "rows": [
+                            {
+                                "cells": ["type", "filename", "file"],
+                                "line": 113,
+                                "id": "files;download-file;;1"
+                            },
+                            {
+                                "cells": ["file", "Demo Code - C++.cc", "Demo Code - C++.cc"],
+                                "line": 114,
+                                "id": "files;download-file;;2"
+                            },
+                            {
+                                "cells": ["file", "Demo Code - PHP.php", "Demo Code - PHP.php"],
+                                "line": 115,
+                                "id": "files;download-file;;3"
+                            },
+                            {
+                                "cells": ["file", "Demo Code - Python.py", "Demo Code - Python.py"],
+                                "line": 116,
+                                "id": "files;download-file;;4"
+                            },
+                            {
+                                "cells": ["file", "Demo Image - ccc.jpg", "Demo Image - ccc.jpg"],
+                                "line": 117,
+                                "id": "files;download-file;;5"
+                            },
+                            {
+                                "cells": ["file", "Demo Image - Laser Towards Milky Ways Centre.jpg", "Demo Image - Laser Towards Milky Ways Centre.jpg"],
+                                "line": 118,
+                                "id": "files;download-file;;6"
+                            },
+                            {
+                                "cells": ["file", "Demo Image - Northern Lights.jpg", "Demo Image - Northern Lights.jpg"],
+                                "line": 119,
+                                "id": "files;download-file;;7"
+                            },
+                            {
+                                "cells": ["file", "Demo Movie MOV - Big Bug Bunny Trailer.mov", "Demo Movie MOV - Big Bug Bunny Trailer.mov"],
+                                "line": 120,
+                                "id": "files;download-file;;8"
+                            },
+                            {
+                                "cells": ["file", "Demo Movie OGG - Big Bug Bunny Trailer.ogg", "Demo Movie OGG - Big Bug Bunny Trailer.ogg"],
+                                "line": 121,
+                                "id": "files;download-file;;9"
+                            },
+                            {
+                                "cells": ["file", "Demo MP3 - E.J. - Blick ZurÃ¼ck.mp3", "Demo MP3 - E.J. - Blick ZurÃ¼ck.mp3"],
+                                "line": 122,
+                                "id": "files;download-file;;10"
+                            },
+                            {
+                                "cells": ["file", "Demo PDF - Alice in Wonderland.pdf", "Demo PDF - Alice in Wonderland.pdf"],
+                                "line": 123,
+                                "id": "files;download-file;;11"
+                            },
+                            {
+                                "cells": ["file", "Demo Textfile - License.txt", "Demo Textfile - License.txt"],
+                                "line": 124,
+                                "id": "files;download-file;;12"
+                            },
+                            {
+                                "cells": ["folder", "Music", "Music.zip"],
+                                "line": 125,
+                                "id": "files;download-file;;13"
+                            },
+                            {
+                                "cells": ["folder", "Photos", "Photos.zip"],
+                                "line": 126,
+                                "id": "files;download-file;;14"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "keyword": "Scenario Outline",
+                "name": "delete item",
+                "line": 128,
+                "description": "",
+                "id": "files;delete-item",
+                "type": "scenario_outline",
+                "steps": [
+                    {
+                        "keyword": "And ",
+                        "name": "I go to /",
+                        "line": 129,
+                        "match": {
+                            "location": "features/files.feature:129"
+                        }
+                    },
+                    {
+                        "keyword": "When ",
+                        "name": "I hover over <type> <filename>",
+                        "line": 130,
+                        "match": {
+                            "arguments": [
+                                {
+                                    "offset": 13,
+                                    "val": "file Demo Code - C++.cc"
+                                }
+                            ],
+                            "location": "features/step_definitions/files_steps.rb:33"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I click on the delete action of <type> <filename>",
+                        "line": 131,
+                        "match": {
+                            "location": "features/files.feature:131"
+                        }
+                    },
+                    {
+                        "keyword": "Then ",
+                        "name": "I should no longer see <type> <filename>",
+                        "line": 132,
+                        "match": {
+                            "location": "features/files.feature:132"
+                        }
+                    }
+                ],
+                "examples": [
+                    {
+                        "keyword": "Examples",
+                        "name": "",
+                        "line": 134,
+                        "description": "",
+                        "id": "files;delete-item;",
+                        "rows": [
+                            {
+                                "cells": ["type", "filename"],
+                                "line": 135,
+                                "id": "files;delete-item;;1"
+                            },
+                            {
+                                "cells": ["file", "Demo Code - C++.cc"],
+                                "line": 136,
+                                "id": "files;delete-item;;2"
+                            },
+                            {
+                                "cells": ["file", "Demo Code - PHP.php"],
+                                "line": 137,
+                                "id": "files;delete-item;;3"
+                            },
+                            {
+                                "cells": ["file", "Demo Code - Python.py"],
+                                "line": 138,
+                                "id": "files;delete-item;;4"
+                            },
+                            {
+                                "cells": ["file", "Demo Image - ccc.jpg"],
+                                "line": 139,
+                                "id": "files;delete-item;;5"
+                            },
+                            {
+                                "cells": ["file", "Demo Image - Laser Towards Milky Ways Centre.jpg"],
+                                "line": 140,
+                                "id": "files;delete-item;;6"
+                            },
+                            {
+                                "cells": ["file", "Demo Image - Northern Lights.jpg"],
+                                "line": 141,
+                                "id": "files;delete-item;;7"
+                            },
+                            {
+                                "cells": ["file", "Demo Movie MOV - Big Bug Bunny Trailer.mov"],
+                                "line": 142,
+                                "id": "files;delete-item;;8"
+                            },
+                            {
+                                "cells": ["file", "Demo Movie OGG - Big Bug Bunny Trailer.ogg"],
+                                "line": 143,
+                                "id": "files;delete-item;;9"
+                            },
+                            {
+                                "cells": ["file", "Demo MP3 - E.J. - Blick ZurÃ¼ck.mp3"],
+                                "line": 144,
+                                "id": "files;delete-item;;10"
+                            },
+                            {
+                                "cells": ["file", "Demo PDF - Alice in Wonderland.pdf"],
+                                "line": 145,
+                                "id": "files;delete-item;;11"
+                            },
+                            {
+                                "cells": ["file", "Demo Textfile - License.txt"],
+                                "line": 146,
+                                "id": "files;delete-item;;12"
+                            },
+                            {
+                                "cells": ["folder", "Music"],
+                                "line": 147,
+                                "id": "files;delete-item;;13"
+                            },
+                            {
+                                "cells": ["folder", "Photos"],
+                                "line": 148,
+                                "id": "files;delete-item;;14"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "keyword": "Scenario Outline",
+                "name": "upload file",
+                "line": 150,
+                "description": "",
+                "id": "files;upload-file",
+                "type": "scenario_outline",
+                "steps": [
+                    {
+                        "keyword": "Given ",
+                        "name": "I go to /",
+                        "line": 151,
+                        "match": {
+                            "location": "features/files.feature:151"
+                        }
+                    },
+                    {
+                        "keyword": "When ",
+                        "name": "I click on the upload action",
+                        "line": 152,
+                        "match": {
+                            "location": "features/files.feature:152"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I choose <type> <filename> to upload in the dialog",
+                        "line": 153,
+                        "match": {
+                            "location": "features/files.feature:153"
+                        }
+                    },
+                    {
+                        "keyword": "Then ",
+                        "name": "I should see <filename>",
+                        "line": 154,
+                        "match": {
+                            "location": "features/files.feature:154"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "<filename> should have a <mimetype> icon",
+                        "line": 155,
+                        "match": {
+                            "location": "features/files.feature:155"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "<filename> should have size <size>",
+                        "line": 156,
+                        "match": {
+                            "location": "features/files.feature:156"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "<filename> should have human readable size <hsize>",
+                        "line": 157,
+                        "match": {
+                            "location": "features/files.feature:157"
+                        }
+                    }
+                ],
+                "examples": [
+                    {
+                        "keyword": "Examples",
+                        "name": "",
+                        "line": 159,
+                        "description": "",
+                        "id": "files;upload-file;",
+                        "rows": [
+                            {
+                                "cells": ["type", "mimetype", "filename", "size", "hsize"],
+                                "line": 160,
+                                "id": "files;upload-file;;1"
+                            },
+                            {
+                                "cells": ["file", "text/x-c", "Demo Code - C++.cc", "3066", "3 kB"],
+                                "line": 161,
+                                "id": "files;upload-file;;2"
+                            },
+                            {
+                                "cells": ["file", "text/x-php", "Demo Code - PHP.php", "3705", "3.6 kB"],
+                                "line": 162,
+                                "id": "files;upload-file;;3"
+                            },
+                            {
+                                "cells": ["file", "text/x-script.phyton", "Demo Code - Python.py", "875", "875 B"],
+                                "line": 163,
+                                "id": "files;upload-file;;4"
+                            },
+                            {
+                                "cells": ["file", "image/jpeg", "Demo Image - ccc.jpg", "166367", "162.5 kB"],
+                                "line": 164,
+                                "id": "files;upload-file;;5"
+                            },
+                            {
+                                "cells": ["file", "image/jpeg", "Demo Image - Laser Towards Milky Ways Centre.jpg", "315057", "307.7 kB"],
+                                "line": 165,
+                                "id": "files;upload-file;;6"
+                            },
+                            {
+                                "cells": ["file", "image/jpeg", "Demo Image - Northern Lights.jpg", "224246", "219 kB"],
+                                "line": 166,
+                                "id": "files;upload-file;;7"
+                            },
+                            {
+                                "cells": ["file", "video/quicktime", "Demo Movie MOV - Big Bug Bunny Trailer.mov", "11061011", "10.5 MB"],
+                                "line": 167,
+                                "id": "files;upload-file;;8"
+                            },
+                            {
+                                "cells": ["file", "application/ogg", "Demo Movie OGG - Big Bug Bunny Trailer.ogg", "4360399", "4.2 MB"],
+                                "line": 168,
+                                "id": "files;upload-file;;9"
+                            },
+                            {
+                                "cells": ["file", "audio/mpeg", "Demo MP3 - E.J. - Blick ZurÃ¼ck.mp3", "2998100", "2.9 MB"],
+                                "line": 169,
+                                "id": "files;upload-file;;10"
+                            },
+                            {
+                                "cells": ["file", "application/pdf", "Demo PDF - Alice in Wonderland.pdf", "711671", "695 kB"],
+                                "line": 170,
+                                "id": "files;upload-file;;11"
+                            },
+                            {
+                                "cells": ["file", "text/plain", "Demo Textfile - License.txt", "2016", "2 kB"],
+                                "line": 171,
+                                "id": "files;upload-file;;12"
+                            },
+                            {
+                                "cells": ["folder", "httpd/unix-directory", "Music", "73705595", "70.3 MB"],
+                                "line": 172,
+                                "id": "files;upload-file;;13"
+                            },
+                            {
+                                "cells": ["folder", "httpd/unix-directory", "Photos", "784677", "766.3 kB"],
+                                "line": 173,
+                                "id": "files;upload-file;;14"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "keyword": "Scenario Outline",
+                "name": "rename file",
+                "line": 175,
+                "description": "",
+                "id": "files;rename-file",
+                "type": "scenario_outline",
+                "steps": [
+                    {
+                        "keyword": "And ",
+                        "name": "I go to /",
+                        "line": 176,
+                        "match": {
+                            "location": "features/files.feature:176"
+                        }
+                    },
+                    {
+                        "keyword": "When ",
+                        "name": "I hover over <oldfile>",
+                        "line": 177,
+                        "match": {
+                            "arguments": [
+                                {
+                                    "offset": 13,
+                                    "val": "Rock"
+                                }
+                            ],
+                            "location": "features/step_definitions/files_steps.rb:33"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I click on the rename action of <oldfile>",
+                        "line": 178,
+                        "match": {
+                            "location": "features/files.feature:178"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I enter <newfile>",
+                        "line": 179,
+                        "match": {
+                            "location": "features/files.feature:179"
+                        }
+                    },
+                    {
+                        "keyword": "Then ",
+                        "name": "I should see <newfile>",
+                        "line": 180,
+                        "match": {
+                            "location": "features/files.feature:180"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I should not see <oldfile>",
+                        "line": 181,
+                        "match": {
+                            "location": "features/files.feature:181"
+                        }
+                    }
+                ],
+                "examples": [
+                    {
+                        "keyword": "Examples",
+                        "name": "",
+                        "line": 183,
+                        "description": "",
+                        "id": "files;rename-file;",
+                        "rows": [
+                            {
+                                "cells": ["oldfile", "oldfile"],
+                                "line": 184,
+                                "id": "files;rename-file;;1"
+                            },
+                            {
+                                "cells": ["Music", "Rock"],
+                                "line": 185,
+                                "id": "files;rename-file;;2"
+                            },
+                            {
+                                "cells": ["Photos", "Images"],
+                                "line": 186,
+                                "id": "files;rename-file;;3"
+                            },
+                            {
+                                "cells": ["Demo Code - C++.cc", "1337 Code - C++.cc"],
+                                "line": 187,
+                                "id": "files;rename-file;;4"
+                            },
+                            {
+                                "cells": ["Demo Code - PHP.php", "Learn to Code - PHP.php"],
+                                "line": 188,
+                                "id": "files;rename-file;;5"
+                            },
+                            {
+                                "cells": ["Demo Code - Python.py", "Snake Code - Python.py"],
+                                "line": 189,
+                                "id": "files;rename-file;;6"
+                            },
+                            {
+                                "cells": ["Demo Image - ccc.jpg", "Camp Image - ccc.jpg"],
+                                "line": 190,
+                                "id": "files;rename-file;;7"
+                            },
+                            {
+                                "cells": ["Demo Image - Laser Towards Milky Ways Centre.jpg", "Trek Image - Laser Towards Milky Ways Centre.jpg"],
+                                "line": 191,
+                                "id": "files;rename-file;;8"
+                            },
+                            {
+                                "cells": ["Demo Image - Northern Lights.jpg", "Shiny Image - Northern Lights.jpg"],
+                                "line": 192,
+                                "id": "files;rename-file;;9"
+                            },
+                            {
+                                "cells": ["Demo Movie MOV - Big Bug Bunny Trailer.mov", "Bad Movie MOV - Big Bug Bunny Trailer.mov"],
+                                "line": 193,
+                                "id": "files;rename-file;;10"
+                            },
+                            {
+                                "cells": ["Demo Movie OGG - Big Bug Bunny Trailer.ogg", "Good Movie OGG - Big Bug Bunny Trailer.ogg"],
+                                "line": 194,
+                                "id": "files;rename-file;;11"
+                            },
+                            {
+                                "cells": ["Demo MP3 - E.J. - Blick ZurÃ¼ck.mp3", "TOHEAR MP3 - E.J. - Blick ZurÃ¼ck.mp3"],
+                                "line": 195,
+                                "id": "files;rename-file;;12"
+                            },
+                            {
+                                "cells": ["Demo PDF - Alice in Wonderland.pdf", "Send PDF - Alice in Wonderland.pdf"],
+                                "line": 196,
+                                "id": "files;rename-file;;13"
+                            },
+                            {
+                                "cells": ["Demo Textfile - License.txt", "Law Textfile - License.txt"],
+                                "line": 197,
+                                "id": "files;rename-file;;14"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "keyword": "Feature",
+        "name": "Login",
+        "line": 1,
+        "description": "In order to protect data in my cloud instance\nAs an user\nI want restricted access to my cloud",
+        "id": "login",
+        "uri": "features/login.feature",
+        "elements": [
+            {
+                "keyword": "Scenario",
+                "name": "Login via web browser",
+                "line": 5,
+                "description": "",
+                "id": "login;login-via-web-browser",
+                "type": "scenario",
+                "steps": [
+                    {
+                        "keyword": "Given ",
+                        "name": "I am not logged in",
+                        "line": 6,
+                        "match": {
+                            "location": "features/step_definitions/my_steps.rb:1"
+                        },
+                        "result": {
+                            "status": "passed"
+                        }
+                    },
+                    {
+                        "keyword": "When ",
+                        "name": "I enter my valid credential",
+                        "line": 7,
+                        "match": {
+                            "location": "features/step_definitions/my_steps.rb:5"
+                        },
+                        "result": {
+                            "status": "passed"
+                        }
+                    },
+                    {
+                        "keyword": "Then ",
+                        "name": "I should be able to access my cloud",
+                        "line": 8,
+                        "match": {
+                            "location": "features/step_definitions/my_steps.rb:12"
+                        },
+                        "result": {
+                            "status": "passed"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "keyword": "Feature",
+        "name": "share files with link",
+        "line": 1,
+        "description": "In order to collaborate with others\nAs a user\nI want to share files with a link",
+        "id": "share-files-with-link",
+        "uri": "features/share_files_with_link.feature",
+        "elements": [
+            {
+                "keyword": "Scenario",
+                "name": "share dialog",
+                "line": 6,
+                "description": "",
+                "id": "share-files-with-link;share-dialog",
+                "type": "scenario",
+                "steps": [
+                    {
+                        "keyword": "Given ",
+                        "name": "I am logged in",
+                        "line": 7,
+                        "match": {
+                            "location": "features/step_definitions/basic_steps.rb:1"
+                        },
+                        "result": {
+                            "status": "passed"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I have uploaded some files",
+                        "line": 8,
+                        "match": {
+                            "location": "features/share_files_with_link.feature:8"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "When ",
+                        "name": "I go to the files app",
+                        "line": 9,
+                        "match": {
+                            "location": "features/share_files_with_link.feature:9"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I hover over a file",
+                        "line": 10,
+                        "match": {
+                            "arguments": [
+                                {
+                                    "offset": 13,
+                                    "val": "a file"
+                                }
+                            ],
+                            "location": "features/step_definitions/files_steps.rb:33"
+                        },
+                        "result": {
+                            "status": "skipped"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I click on the share file action",
+                        "line": 11,
+                        "match": {
+                            "location": "features/share_files_with_link.feature:11"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "Then ",
+                        "name": "I should see a \"Share with link\" checkbox",
+                        "line": 12,
+                        "match": {
+                            "location": "features/share_files_with_link.feature:12"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    }
+                ]
+            },
+            {
+                "keyword": "Scenario",
+                "name": "share with link",
+                "line": 14,
+                "description": "",
+                "id": "share-files-with-link;share-with-link",
+                "type": "scenario",
+                "steps": [
+                    {
+                        "keyword": "Given ",
+                        "name": "I am logged in",
+                        "line": 15,
+                        "match": {
+                            "location": "features/step_definitions/basic_steps.rb:1"
+                        },
+                        "result": {
+                            "status": "passed"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I have uploaded some files",
+                        "line": 16,
+                        "match": {
+                            "location": "features/share_files_with_link.feature:16"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "When ",
+                        "name": "I go to the files app",
+                        "line": 17,
+                        "match": {
+                            "location": "features/share_files_with_link.feature:17"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I hover over a file",
+                        "line": 18,
+                        "match": {
+                            "arguments": [
+                                {
+                                    "offset": 13,
+                                    "val": "a file"
+                                }
+                            ],
+                            "location": "features/step_definitions/files_steps.rb:33"
+                        },
+                        "result": {
+                            "status": "skipped"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I click on the share file action",
+                        "line": 19,
+                        "match": {
+                            "location": "features/share_files_with_link.feature:19"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I click the \"share with link\" action",
+                        "line": 20,
+                        "match": {
+                            "location": "features/share_files_with_link.feature:20"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "Then ",
+                        "name": "I should see the share with link icon",
+                        "line": 21,
+                        "match": {
+                            "location": "features/share_files_with_link.feature:21"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I should see a URL to the file in the share with link text input",
+                        "line": 22,
+                        "match": {
+                            "location": "features/share_files_with_link.feature:22"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    }
+                ]
+            },
+            {
+                "keyword": "Scenario",
+                "name": "list shared files",
+                "line": 24,
+                "description": "",
+                "id": "share-files-with-link;list-shared-files",
+                "type": "scenario",
+                "steps": [
+                    {
+                        "keyword": "Given ",
+                        "name": "I am logged in",
+                        "line": 25,
+                        "match": {
+                            "location": "features/step_definitions/basic_steps.rb:1"
+                        },
+                        "result": {
+                            "status": "passed"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I have shared some files",
+                        "line": 26,
+                        "match": {
+                            "location": "features/share_files_with_link.feature:26"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "When ",
+                        "name": "I go to the files app",
+                        "line": 27,
+                        "match": {
+                            "location": "features/share_files_with_link.feature:27"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I hover over a file shared with a link",
+                        "line": 28,
+                        "match": {
+                            "arguments": [
+                                {
+                                    "offset": 13,
+                                    "val": "a file shared with a link"
+                                }
+                            ],
+                            "location": "features/step_definitions/files_steps.rb:33"
+                        },
+                        "result": {
+                            "status": "skipped"
+                        }
+                    },
+                    {
+                        "keyword": "Then ",
+                        "name": "I should see the share with link icon",
+                        "line": 29,
+                        "match": {
+                            "location": "features/share_files_with_link.feature:29"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    }
+                ]
+            },
+            {
+                "keyword": "Scenario",
+                "name": "list unshared files",
+                "line": 31,
+                "description": "",
+                "id": "share-files-with-link;list-unshared-files",
+                "type": "scenario",
+                "steps": [
+                    {
+                        "keyword": "Given ",
+                        "name": "I am logged in",
+                        "line": 32,
+                        "match": {
+                            "location": "features/step_definitions/basic_steps.rb:1"
+                        },
+                        "result": {
+                            "status": "passed"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I have shared some files",
+                        "line": 33,
+                        "match": {
+                            "location": "features/share_files_with_link.feature:33"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "When ",
+                        "name": "I go to the files app",
+                        "line": 34,
+                        "match": {
+                            "location": "features/share_files_with_link.feature:34"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I hover over a file not shared with a link",
+                        "line": 35,
+                        "match": {
+                            "arguments": [
+                                {
+                                    "offset": 13,
+                                    "val": "a file not shared with a link"
+                                }
+                            ],
+                            "location": "features/step_definitions/files_steps.rb:33"
+                        },
+                        "result": {
+                            "status": "skipped"
+                        }
+                    },
+                    {
+                        "keyword": "Then ",
+                        "name": "I should not see the share with link icon",
+                        "line": 36,
+                        "match": {
+                            "location": "features/share_files_with_link.feature:36"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    }
+                ]
+            },
+            {
+                "keyword": "Scenario",
+                "name": "unshare",
+                "line": 38,
+                "description": "",
+                "id": "share-files-with-link;unshare",
+                "type": "scenario",
+                "steps": [
+                    {
+                        "keyword": "Given ",
+                        "name": "I am logged in",
+                        "line": 39,
+                        "match": {
+                            "location": "features/step_definitions/basic_steps.rb:1"
+                        },
+                        "result": {
+                            "status": "passed"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I have shared a file with link",
+                        "line": 40,
+                        "match": {
+                            "location": "features/share_files_with_link.feature:40"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "When ",
+                        "name": "I go to the files app",
+                        "line": 41,
+                        "match": {
+                            "location": "features/share_files_with_link.feature:41"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I hover over the file",
+                        "line": 42,
+                        "match": {
+                            "arguments": [
+                                {
+                                    "offset": 13,
+                                    "val": "the file"
+                                }
+                            ],
+                            "location": "features/step_definitions/files_steps.rb:33"
+                        },
+                        "result": {
+                            "status": "skipped"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I click on the share file action",
+                        "line": 43,
+                        "match": {
+                            "location": "features/share_files_with_link.feature:43"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I deselect the \"share with link\" action",
+                        "line": 44,
+                        "match": {
+                            "location": "features/share_files_with_link.feature:44"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "Then ",
+                        "name": "I should not see a URL to the file",
+                        "line": 45,
+                        "match": {
+                            "location": "features/share_files_with_link.feature:45"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I chould not see share with link text input",
+                        "line": 46,
+                        "match": {
+                            "location": "features/share_files_with_link.feature:46"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "keyword": "Feature",
+        "name": "share files with user",
+        "line": 1,
+        "description": "In order to collaborate with other owncloud users\nAs a user\nI want to share files with other users",
+        "id": "share-files-with-user",
+        "uri": "features/share_files_with_user.feature",
+        "elements": [
+            {
+                "keyword": "Scenario",
+                "name": "share dialog",
+                "line": 6,
+                "description": "",
+                "id": "share-files-with-user;share-dialog",
+                "type": "scenario",
+                "steps": [
+                    {
+                        "keyword": "Given ",
+                        "name": "I am logged in",
+                        "line": 7,
+                        "match": {
+                            "location": "features/step_definitions/basic_steps.rb:1"
+                        },
+                        "result": {
+                            "status": "passed"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I have uploaded some files",
+                        "line": 8,
+                        "match": {
+                            "location": "features/share_files_with_user.feature:8"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "When ",
+                        "name": "I go to the files app",
+                        "line": 9,
+                        "match": {
+                            "location": "features/share_files_with_user.feature:9"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I hover over a file",
+                        "line": 10,
+                        "match": {
+                            "arguments": [
+                                {
+                                    "offset": 13,
+                                    "val": "a file"
+                                }
+                            ],
+                            "location": "features/step_definitions/files_steps.rb:33"
+                        },
+                        "result": {
+                            "status": "skipped"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I click on the share file action",
+                        "line": 11,
+                        "match": {
+                            "location": "features/share_files_with_user.feature:11"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "Then ",
+                        "name": "I should see a share with text input",
+                        "line": 12,
+                        "match": {
+                            "location": "features/share_files_with_user.feature:12"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    }
+                ]
+            },
+            {
+                "keyword": "Scenario",
+                "name": "share with a user",
+                "line": 14,
+                "description": "",
+                "id": "share-files-with-user;share-with-a-user",
+                "type": "scenario",
+                "steps": [
+                    {
+                        "keyword": "Given ",
+                        "name": "I am logged in",
+                        "line": 15,
+                        "match": {
+                            "location": "features/step_definitions/basic_steps.rb:1"
+                        },
+                        "result": {
+                            "status": "passed"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I have uploaded some files",
+                        "line": 16,
+                        "match": {
+                            "location": "features/share_files_with_user.feature:16"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "When ",
+                        "name": "I go to the files app",
+                        "line": 17,
+                        "match": {
+                            "location": "features/share_files_with_user.feature:17"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I hover over a file",
+                        "line": 18,
+                        "match": {
+                            "arguments": [
+                                {
+                                    "offset": 13,
+                                    "val": "a file"
+                                }
+                            ],
+                            "location": "features/step_definitions/files_steps.rb:33"
+                        },
+                        "result": {
+                            "status": "skipped"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I click on the share file action",
+                        "line": 19,
+                        "match": {
+                            "location": "features/share_files_with_user.feature:19"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I enter a user name",
+                        "line": 20,
+                        "match": {
+                            "location": "features/share_files_with_user.feature:20"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I click the username",
+                        "line": 21,
+                        "match": {
+                            "location": "features/share_files_with_user.feature:21"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I hover over the file",
+                        "line": 22,
+                        "match": {
+                            "arguments": [
+                                {
+                                    "offset": 13,
+                                    "val": "the file"
+                                }
+                            ],
+                            "location": "features/step_definitions/files_steps.rb:33"
+                        },
+                        "result": {
+                            "status": "skipped"
+                        }
+                    },
+                    {
+                        "keyword": "Then ",
+                        "name": "I should see the share with user icon",
+                        "line": 23,
+                        "match": {
+                            "location": "features/share_files_with_user.feature:23"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I should see the username in the list of shared users",
+                        "line": 24,
+                        "match": {
+                            "location": "features/share_files_with_user.feature:24"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    }
+                ]
+            },
+            {
+                "keyword": "Scenario",
+                "name": "list shared files",
+                "line": 26,
+                "description": "",
+                "id": "share-files-with-user;list-shared-files",
+                "type": "scenario",
+                "steps": [
+                    {
+                        "keyword": "Given ",
+                        "name": "I am logged in",
+                        "line": 27,
+                        "match": {
+                            "location": "features/step_definitions/basic_steps.rb:1"
+                        },
+                        "result": {
+                            "status": "passed"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I have shared some files",
+                        "line": 28,
+                        "match": {
+                            "location": "features/share_files_with_user.feature:28"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "When ",
+                        "name": "I go to the files app",
+                        "line": 29,
+                        "match": {
+                            "location": "features/share_files_with_user.feature:29"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I hover over a file shared with a user",
+                        "line": 30,
+                        "match": {
+                            "arguments": [
+                                {
+                                    "offset": 13,
+                                    "val": "a file shared with a user"
+                                }
+                            ],
+                            "location": "features/step_definitions/files_steps.rb:33"
+                        },
+                        "result": {
+                            "status": "skipped"
+                        }
+                    },
+                    {
+                        "keyword": "Then ",
+                        "name": "I should see the share with user icon",
+                        "line": 31,
+                        "match": {
+                            "location": "features/share_files_with_user.feature:31"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    }
+                ]
+            },
+            {
+                "keyword": "Scenario",
+                "name": "list unshared files",
+                "line": 33,
+                "description": "",
+                "id": "share-files-with-user;list-unshared-files",
+                "type": "scenario",
+                "steps": [
+                    {
+                        "keyword": "Given ",
+                        "name": "I am logged in",
+                        "line": 34,
+                        "match": {
+                            "location": "features/step_definitions/basic_steps.rb:1"
+                        },
+                        "result": {
+                            "status": "passed"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I have shared some files",
+                        "line": 35,
+                        "match": {
+                            "location": "features/share_files_with_user.feature:35"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "When ",
+                        "name": "I go to the files app",
+                        "line": 36,
+                        "match": {
+                            "location": "features/share_files_with_user.feature:36"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I hover over a file not shared with a user",
+                        "line": 37,
+                        "match": {
+                            "arguments": [
+                                {
+                                    "offset": 13,
+                                    "val": "a file not shared with a user"
+                                }
+                            ],
+                            "location": "features/step_definitions/files_steps.rb:33"
+                        },
+                        "result": {
+                            "status": "skipped"
+                        }
+                    },
+                    {
+                        "keyword": "Then ",
+                        "name": "I should not see the share with user icon",
+                        "line": 38,
+                        "match": {
+                            "location": "features/share_files_with_user.feature:38"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    }
+                ]
+            },
+            {
+                "keyword": "Scenario",
+                "name": "share permissions",
+                "line": 40,
+                "description": "",
+                "id": "share-files-with-user;share-permissions",
+                "type": "scenario",
+                "steps": [
+                    {
+                        "keyword": "Given ",
+                        "name": "I am logged in",
+                        "line": 41,
+                        "match": {
+                            "location": "features/step_definitions/basic_steps.rb:1"
+                        },
+                        "result": {
+                            "status": "passed"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I have shared a file",
+                        "line": 42,
+                        "match": {
+                            "location": "features/share_files_with_user.feature:42"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "When ",
+                        "name": "I go to the files app",
+                        "line": 43,
+                        "match": {
+                            "location": "features/share_files_with_user.feature:43"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I hover over the file",
+                        "line": 44,
+                        "match": {
+                            "arguments": [
+                                {
+                                    "offset": 13,
+                                    "val": "the file"
+                                }
+                            ],
+                            "location": "features/step_definitions/files_steps.rb:33"
+                        },
+                        "result": {
+                            "status": "skipped"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I click on the share file action",
+                        "line": 45,
+                        "match": {
+                            "location": "features/share_files_with_user.feature:45"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I hover over the user I shared the file with",
+                        "line": 46,
+                        "match": {
+                            "arguments": [
+                                {
+                                    "offset": 13,
+                                    "val": "the user I shared the file with"
+                                }
+                            ],
+                            "location": "features/step_definitions/files_steps.rb:33"
+                        },
+                        "result": {
+                            "status": "skipped"
+                        }
+                    },
+                    {
+                        "keyword": "Then ",
+                        "name": "I should see a \"can edit\" checkbox",
+                        "line": 47,
+                        "match": {
+                            "location": "features/share_files_with_user.feature:47"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I should see an unshare action",
+                        "line": 48,
+                        "match": {
+                            "location": "features/share_files_with_user.feature:48"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    }
+                ]
+            },
+            {
+                "keyword": "Scenario",
+                "name": "unshare",
+                "line": 50,
+                "description": "",
+                "id": "share-files-with-user;unshare",
+                "type": "scenario",
+                "steps": [
+                    {
+                        "keyword": "Given ",
+                        "name": "I am logged in",
+                        "line": 51,
+                        "match": {
+                            "location": "features/step_definitions/basic_steps.rb:1"
+                        },
+                        "result": {
+                            "status": "passed"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I have shared a file",
+                        "line": 52,
+                        "match": {
+                            "location": "features/share_files_with_user.feature:52"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "When ",
+                        "name": "I go to the files app",
+                        "line": 53,
+                        "match": {
+                            "location": "features/share_files_with_user.feature:53"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I hover over the file",
+                        "line": 54,
+                        "match": {
+                            "arguments": [
+                                {
+                                    "offset": 13,
+                                    "val": "the file"
+                                }
+                            ],
+                            "location": "features/step_definitions/files_steps.rb:33"
+                        },
+                        "result": {
+                            "status": "skipped"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I click on the share file action",
+                        "line": 55,
+                        "match": {
+                            "location": "features/share_files_with_user.feature:55"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I hover over the user I shared the file with",
+                        "line": 56,
+                        "match": {
+                            "arguments": [
+                                {
+                                    "offset": 13,
+                                    "val": "the user I shared the file with"
+                                }
+                            ],
+                            "location": "features/step_definitions/files_steps.rb:33"
+                        },
+                        "result": {
+                            "status": "skipped"
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "I click on the unshare action",
+                        "line": 57,
+                        "match": {
+                            "location": "features/share_files_with_user.feature:57"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    },
+                    {
+                        "keyword": "Then ",
+                        "name": "I should not see the username in the list of shared users",
+                        "line": 58,
+                        "match": {
+                            "location": "features/share_files_with_user.feature:58"
+                        },
+                        "result": {
+                            "status": "undefined"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]
