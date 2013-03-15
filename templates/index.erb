@@ -1,8 +1,8 @@
 <html>
 <head>
   <title>Cucumber Reporting Diagnostic</title>
-  <link href="/js/style.css" rel="stylesheet" media="screen">
-  <link href="/js/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="js/style.css" rel="stylesheet" media="screen">
+  <link href="js/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
 <body>
 
@@ -20,7 +20,7 @@
 
   <div class="row">
     <div class="span12">
-      <form name="generate" id="generate" action="/generate" method="POST">
+      <form name="generate" id="generate" action="<%= $base %>/generate" method="POST">
         <fieldset>
           <legend>Report Generator</legend>
           <select id="diagnostic_release" name="diagnostic[release]">
@@ -50,9 +50,9 @@
 
 </div>
 
-<script src="/js/jquery-1.9.1.min.js"></script>
-<script src="/js/bootstrap/js/bootstrap.min.js"></script>
-<script src="/js/jquery-validation/jquery.validate.min.js"></script>
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/bootstrap/js/bootstrap.min.js"></script>
+<script src="js/jquery-validation/jquery.validate.min.js"></script>
 
 <script>
     $(document).ready(function () {
