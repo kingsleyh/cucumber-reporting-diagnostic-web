@@ -5,8 +5,8 @@ require File.dirname(__FILE__) + '/cucumber_reporting.rb'
 
  set :views, settings.root + '/templates'
  set :public_folder, settings.root + '/public'
- $base = "/cucumber-reporting-web"
- # $base = ""
+ # $base = "/cucumber-reporting-web"
+ $base = ""
 
 get '/' do
   @releases = Dir.entries(settings.root + '/public/releases').collect{|version| version if version.match(/jar$/)}.compact
