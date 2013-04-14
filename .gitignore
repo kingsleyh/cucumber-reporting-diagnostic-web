@@ -1,0 +1,5 @@
+public/releases/*
+public/json/*
+cucumber-reporting-web.war
+.idea
+.DS_Store

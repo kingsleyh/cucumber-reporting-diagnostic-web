@@ -10,7 +10,7 @@ class CucumberReporting
     java_import 'net.masterthought.cucumber.ReportBuilder'
     list = ["#{path}/../public/json/#{json_location}"]
     rd = java.io.File.new("#{path}/../public/cucumber-html-reports/#{output_location}")
-    report_builder = ReportBuilder.new(list, rd, "", "1","diagnostic-report",skipped_fails,undefined_fails,flash_charts,false,false,"")
+    report_builder = ReportBuilder.new(list, rd, "", "1","diagnostic-report",skipped_fails,undefined_fails,flash_charts,false,false,"",false)
     report_builder.generateReports
   end
 
