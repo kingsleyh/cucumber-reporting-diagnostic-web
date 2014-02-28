@@ -1,5 +1,6 @@
 public/releases/*
 public/json/*
+public/cucumber-html-reports
 cucumber-reporting-web.war
 .idea
-.DS_Store
+**/**/.DS_Store
